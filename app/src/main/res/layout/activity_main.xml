@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.taskailleronjanbober.screens.main.MainActivityViewModel" />
+    </data>
+
+    <ViewFlipper
+        android:id="@+id/view_navigation_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/get_list"
+            layout="@layout/flipper_get_list"
+            app:viewModel="@{viewModel}"/>
+
+        <include
+            android:id="@+id/get_item"
+            layout="@layout/flipper_get_item"
+            app:viewModel="@{viewModel}"/>
+
+    </ViewFlipper>
+
+</layout>

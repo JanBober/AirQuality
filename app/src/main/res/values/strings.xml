@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TaskAilleronJanBober</string>
+    <string name="task_ailleron_jan_bober">task Ailleron Jan Bober</string>
+    <string name="st">st</string>
+    <string name="so2">so2</string>
+    <string name="no2">no2</string>
+    <string name="pm10">pm10</string>
+    <string name="pm25">pm25</string>
+    <string name="o3">o3</string>
+    <string name="city">City</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="paramName"
+            type="String" />
+
+        <variable
+            name="paramFormula"
+            type="String" />
+    </data>
+
+    <TableLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f1f1f1">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/paramNameId"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@{paramName}"
+                style="@style/adapterTextItem"/>
+
+            <TextView
+                android:id="@+id/paramFormulaId"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@{paramFormula}"
+                style="@style/adapterTextItem"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+</layout>

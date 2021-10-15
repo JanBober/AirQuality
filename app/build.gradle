@@ -1,0 +1,60 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.taskailleronjanbober"
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures.viewBinding = true
+    buildFeatures.dataBinding = true
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
+}
+
+dependencies {
+    implementation project(":domain")
+    implementation project(":data")
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+
+    implementation rootProject.ext.AppDependencies
+
+    // hilt
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+
+    //Dagger
+    kapt "com.google.dagger:dagger-android-processor:$dagger2_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger2_version"
+}
